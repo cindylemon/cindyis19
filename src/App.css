@@ -4,6 +4,15 @@ body{
   align-items: center;
 }
 
-#container {
-  
+.container {
+  position: relative;
+ position: relative;
+  width: 80vw;
+  max-width: 1441px;
+  aspect-ratio: 1441 / 942;
+  margin: 0 auto;
+
+  background-image: url(assets/collage.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
