@@ -46,18 +46,20 @@ function App() {
   };
 
   return (
-  <div className="container">
+  <div className="container" onClick={() => setSelectedPhoto(null)}>
+    
     {photos.map(photo => {
       const popupPosition = getPosition(photo);
       
       return (
         <React.Fragment key={photo.title}>
-          
+
           <img 
             className='photos'
             src={photo.src}
             alt={photo.title}
-            onClick={() => {
+            onClick={(e) => {
+              e.stopPropagation();
               setSelectedPhoto(selectedPhoto?.title === photo.title ? null : photo);
             }}
             style={{
@@ -72,6 +74,7 @@ function App() {
           {selectedPhoto?.title === photo.title && (
             <div
               className='popup'
+              onClick={(e) => e.stopPropagation()}
               style={{
                 position: "absolute",
                 top: popupPosition.top,
