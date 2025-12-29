@@ -52,7 +52,7 @@ function App() {
       const popupPosition = getPosition(photo);
       
       return (
-        <React.Fragment key={photo.title}>
+        <div key={photo.title}>
 
           <img 
             className='photos'
@@ -93,7 +93,7 @@ function App() {
               </button>
             </div>
           )}
-        </React.Fragment>
+        </div>
       );
     })}
   </div>
