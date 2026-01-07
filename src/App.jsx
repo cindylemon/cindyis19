@@ -31,6 +31,7 @@ function App() {
   const bactiveText = "I honestly don’t even know where to begin." +
     " Badminton completely changed my life." +
     " I bonded with so many people, and made so many friendships that I cherish to this day. " +
+    "It really changed my perspective on myself for the better in so many ways. " + 
     "I love my B-Active community so much, and am so proud to have been a part of it. " +
     "This sport has given me so many different experiences, and I’m so proud of who I’ve become because of it. " +
     "I’m not even close to the best athlete, but I know that I’ve been gifted with the best community."
