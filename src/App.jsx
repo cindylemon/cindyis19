@@ -159,8 +159,8 @@ function App() {
       position.right = `calc(100% - ${photo.left} + 2%)`
     }
 
-    if(topPercent > 50){
-      position.top = `calc(100% - ${photo.top} + 15%)`;
+    if (topPercent > 60) {
+      position.top = `calc(100% - ${photo.top} + 30%)`;
     } else {
       position.top = photo.top;
     }
@@ -170,58 +170,60 @@ function App() {
   };
 
   return (
-    <div className="container" onClick={() => setSelectedPhoto(null)}>
+    <div className="outside" onClick = {() => setSelectedPhoto(null)}>
+      <div className="container" onClick={() => setSelectedPhoto(null)}>
 
-      {photos.map(photo => {
-        const popupPosition = getPosition(photo);
+        {photos.map(photo => {
+          const popupPosition = getPosition(photo);
 
-        return (
-          <div key={photo.title}>
+          return (
+            <div key={photo.title}>
 
-            <img
-              className='photos'
-              src={photo.src}
-              alt={photo.title}
-              onClick={(e) => {
-                e.stopPropagation();
-                setSelectedPhoto(selectedPhoto?.title === photo.title ? null : photo);
-              }}
-              style={{
-                position: "absolute",
-                top: photo.top,
-                left: photo.left,
-                width: photo.width,
-                zIndex: photo.zIndex
-              }}
-            />
-
-            {selectedPhoto?.title === photo.title && (
-              <div
-                className='popup'
-                onClick={(e) => e.stopPropagation()}
+              <img
+                className='photos'
+                src={photo.src}
+                alt={photo.title}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedPhoto(selectedPhoto?.title === photo.title ? null : photo);
+                }}
                 style={{
                   position: "absolute",
-                  top: popupPosition.top,
-                  left: popupPosition.left,
-                  right: popupPosition.right,
-                  zIndex: 200
+                  top: photo.top,
+                  left: photo.left,
+                  width: photo.width,
+                  zIndex: photo.zIndex
                 }}
-              >
-                <div className="textContainer">
-                  <h3 className="textTitle">{photo.title}</h3>
-                  <p className="textText">{photo.text.toLowerCase()}</p>
-                  {/* <button
-                  className="close-btn"
-                  onClick={() => setSelectedPhoto(null)}
+              />
+
+              {selectedPhoto?.title === photo.title && (
+                <div
+                  className='popup'
+                  onClick={(e) => e.stopPropagation()}
+                  style={{
+                    position: "absolute",
+                    top: popupPosition.top,
+                    left: popupPosition.left,
+                    right: popupPosition.right,
+                    zIndex: 200
+                  }}
                 >
-                  ×
-                </button> */}
+                  <div className="textContainer">
+                    <h3 className="textTitle">{photo.title}</h3>
+                    <p className="textText">{photo.text.toLowerCase()}</p>
+                    {/* <button
+                      className="close-btn"
+                      onClick={() => setSelectedPhoto(null)}
+                    >
+                      ×
+                    </button> */}
+                  </div>
                 </div>
-              </div>
-            )}
-          </div>
-        );
-      })}
+              )}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
