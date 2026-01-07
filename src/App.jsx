@@ -65,7 +65,7 @@ function App() {
     "I think he’s trained with me the most since we’ve both started, and am grateful for how he’s affected me as a player, but also as a person. " +
     "I miss the singles matches at drop-ins and the ladder crashouts, and am thankful for the late night/early morning Roblox games."
   const kaiText = "Kai and I met in the first week of my first year, and we immediately became close friends. " +
-    "He is one of the smartest, hard-working, realistic people I’ve ever met. " +
+    "He is one of the smartest, hard-working, most realistic people I’ve ever met. " +
     "He’s kept me fed during late-night IKB grinds, and has literally taught me half my courses. " +
     "He always believes in me, no matter how many mental breakdowns I have or examlets I fail."
   const lebronText = "I don’t even know where to start with these guys. " +
@@ -183,7 +183,7 @@ function App() {
     <div className="outside" onClick = {() => setSelectedPhoto(null)}>
       <div className="trackingFound">
         <span>discovered: {found.size} / {photos.length}</span>
-        {found.size === photos.length && <span> all found! 1 for every yr&lt;3</span>}
+        {found.size === photos.length && <span>, all found! 1 for every yr&lt;3</span>}
       </div>
       <div className="container" onClick={() => setSelectedPhoto(null)}>
 
