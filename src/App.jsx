@@ -129,30 +129,25 @@ function App() {
   const getPosition = (photo) => {
     const leftPercent = parseFloat(photo.left);
     const topPercent = parseFloat(photo.top);
+    let position = {};
 
     // hardcode it w 4 if else statements, then try to encapsulate ?
 
     if (leftPercent < 50) { // && topPercent < 50
-      return {
-        left: `calc(${photo.left} + ${photo.width} + 1%)`,
-        top: photo.top, //`calc(${photo.top} + ${photo.height} + 1%)`
-        arrowDirection: 'left'
-      };
+      position.left = `calc(${photo.left} + ${photo.width} + 1%)`;
     }
-    // else if (leftPercent < 50 && topPercent >= 50) {
-    //   return {
-    //     left: `calc(${photo.left} + ${photo.width} + 1%)`,
-    //     top: `calc(${photo.top})`,
-    //     arrowDirection: 'left'
-    //   };
-    // } 
     else {
-      return {
-        right: `calc(100% - ${photo.left} - 2%)`, // + 1% ?
-        top: photo.top,
-        arrowDirection: 'right'
-      };
+      position.right = `calc(100% - ${photo.left} + 2%)`
     }
+
+    if(topPercent > 50){
+      position.top = `calc(100% - ${photo.top} + 15%)`;
+    } else {
+      position.top = photo.top;
+    }
+
+    return position;
+
   };
 
   return (
@@ -193,14 +188,16 @@ function App() {
                   zIndex: 200
                 }}
               >
-                <h3 className = "textTitle">{photo.title}</h3>
-                <p className="textText">{photo.text.toLowerCase()}</p>
-                {/* <button
+                <div className="textContainer">
+                  <h3 className="textTitle">{photo.title}</h3>
+                  <p className="textText">{photo.text.toLowerCase()}</p>
+                  {/* <button
                   className="close-btn"
                   onClick={() => setSelectedPhoto(null)}
                 >
                   ×
                 </button> */}
+                </div>
               </div>
             )}
           </div>
