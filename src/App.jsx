@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import React, { Fragment } from 'react';
+
+import amberPng from "./assets/amber.png";
 
 // extrapolate the text, make it a box that you can scroll for text in
 
@@ -105,7 +106,7 @@ function App() {
   const [selectedPhoto, setSelectedPhoto] = useState(null)
   const photos = [
     // src, top, left, width, title, text
-    { src: "src/assets/amber.png", top: "53.3970276%", left: "2.7%", width: "8.743927828%", title: "amber", text: amberText },
+    { src: amberPng, top: "53.3970276%", left: "2.7%", width: "8.743927828%", title: "amber", text: amberText },
     { src: "src/assets/bactive.png", top: "48.3%", left: "23.21%", width: "9.090909091%", title: "b-active badminton club", text: bactiveText },
     { src: "src/assets/bc.png", top: "2.441613588%", left: "40.13%", width: "10.99930604%", title: "my bc friends", text: bcText },
     { src: "src/assets/edm.png", top: "72.23991507%", left: "42.73%", width: "17.34906315%", title: "my edmonton friends", text: edmText },
