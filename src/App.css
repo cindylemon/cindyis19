@@ -31,7 +31,7 @@ body{
   filter: drop-shadow(0 0 20px rgba(255, 202, 233, 0.8));
   cursor: pointer;
   transform: scale(1.05);
-  z-index: 100 !important;
+  z-index: 50;
 }
 
 .textContainer {
@@ -67,6 +67,6 @@ body{
   padding: 1%;
   right: 1%;
   /* top: 2%; */
-  z-index: 100;
+  z-index: 100 !important;
   color: rgba(226, 165, 201, 0.8)
 }
