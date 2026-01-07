@@ -1,8 +1,13 @@
+* {
+  scrollbar-width: thin;
+  
+  scrollbar-color: #4d364b #a894a0;
+}
+
 body{
   display: flex;
   justify-content: center;
   align-items: center;
-  scrollbar-width: thin;
 }
 
 .container {
@@ -60,7 +65,7 @@ body{
 .trackingFound{
   position: fixed;
   padding: 1%;
-  top: 93vh;
+  /* top: 2%; */
   z-index: 100;
-  color: rgba(255, 202, 233, 0.8)
+  color: rgba(224, 146, 192, 0.8)
 }
