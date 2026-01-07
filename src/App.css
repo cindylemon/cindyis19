@@ -2,7 +2,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-
+  scrollbar-width: thin;
 }
 
 .container {
@@ -56,4 +56,11 @@ body{
 .outside{
   width: 100vw;
   height: 100vh;
+}
+.trackingFound{
+  position: fixed;
+  padding: 1%;
+  top: 93vh;
+  z-index: 100;
+  color: rgba(255, 202, 233, 0.8)
 }

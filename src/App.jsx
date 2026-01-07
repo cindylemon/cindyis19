@@ -27,7 +27,7 @@ function App() {
   const amberText = "Amber was my first friend in Vancouver, and it actually feels like fate that we ever met." +
     "She really gets me and it’s like we’re in our own world whenever we’re together." +
     " I really feel like she gets me, and that I can tell her anything." +
-    "I love her so much even though she always tries to tickle me when we’re together."
+    " I love her so much even though she always tries to tickle me when we’re together."
   const bactiveText = "I honestly don’t even know where to begin." +
     " Badminton completely changed my life." +
     " I bonded with so many people, and made so many friendships that I cherish to this day. " +
@@ -88,8 +88,8 @@ function App() {
     "We don’t see each other often anymore (mostly because she never came to class this year…) but I know we still love each other and I’m so glad that we met."
   const melissaText = "Melissa is genuinely so special. " +
     "She’s so funny and diligent, and insanely good at badminton (but arguably better at pickleball). " +
-    "I’m so grateful for all the rides she’s given me, all the time we spent together, and all the times I laughed so hard my stomach hurt. " +
-    "I look back very fondly on my high school summers largely because of her. " +
+    "I’m so grateful for all the rides I've bummed off of her, all the time we spent together, and every time I laughed so hard my stomach hurt. " +
+    "I look back very fondly on high school (the summers especially) largely because of her. " +
     "I miss her jokes and her mannerisms and can’t wait to see her again."
   const petrosText = "Faith has been something that I have struggled with my whole life (and continue to struggle deeply with). " +
     "Despite this, I am thankful that I have been led to a group of people who are unreasonably funny and caring. " +
@@ -110,8 +110,8 @@ function App() {
     "Wreck Beach on the night of the Northern Lights is one of my all-time favourite memories, and I have too many beautiful amazing moments with Sophia to even recount them here… " +
     "Like drawing on her in middle school or drawing with her over quarantine."
   const susText = "SUS was one of the most impactful things that I ever did in Vancouver. " +
-    "I genuinely think it changed my life, and am so glad to have been blessed with it. " +
-    "I've met so many amazing people, and have been given so many amazing opportunities and insights." +
+    "I genuinely think it changed my life. " +
+    "So many of my amazing memories have been made through sus, where I've also met so many amazing people, and have been given so many amazing opportunities and insights. " +
     "Like 85% of my closest friends have been met through SUS, and I wouldn't have it any other way."
   const yeoText = "I love Yeojin so much, I don’t even think I can describe it with words. " +
     "She’s so empathetic, understanding, and kind, and is so so so much fun to ragebait. " +
@@ -145,6 +145,16 @@ function App() {
     { src: yeojinPng, top: "71.91%", left: "27.7%", width: "9.576682859%", title: "yeojin", text: yeoText }
   ]
 
+  const [found, setFound] = useState(new Set());
+
+  const handlePhotoClick = (photo) => {
+    if(!found.has(photo.title)) {
+      setFound(new Set([...found, photo.title]));
+      
+    }
+    setSelectedPhoto(selectedPhoto?.title === photo.title ? null : photo);
+  }
+
   const getPosition = (photo) => {
     const leftPercent = parseFloat(photo.left);
     const topPercent = parseFloat(photo.top);
@@ -171,6 +181,10 @@ function App() {
 
   return (
     <div className="outside" onClick = {() => setSelectedPhoto(null)}>
+      <div className="trackingFound">
+        <span>discovered: {found.size} / {photos.length}</span>
+        {found.size === photos.length && <span> all found! 1 for every yr&lt;3</span>}
+      </div>
       <div className="container" onClick={() => setSelectedPhoto(null)}>
 
         {photos.map(photo => {
@@ -185,7 +199,7 @@ function App() {
                 alt={photo.title}
                 onClick={(e) => {
                   e.stopPropagation();
-                  setSelectedPhoto(selectedPhoto?.title === photo.title ? null : photo);
+                  handlePhotoClick(photo);
                 }}
                 style={{
                   position: "absolute",
@@ -199,7 +213,8 @@ function App() {
               {selectedPhoto?.title === photo.title && (
                 <div
                   className='popup'
-                  onClick={(e) => e.stopPropagation()}
+                  onClick={(e) => {e.stopPropagation();
+                  }}
                   style={{
                     position: "absolute",
                     top: popupPosition.top,
