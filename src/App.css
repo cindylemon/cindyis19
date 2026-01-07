@@ -1,7 +1,7 @@
 * {
   scrollbar-width: thin;
   
-  scrollbar-color: #4d364b #a894a0;
+  scrollbar-color: #271f26 #a894a0;
 }
 
 body{
@@ -65,7 +65,8 @@ body{
 .trackingFound{
   position: fixed;
   padding: 1%;
+  right: 1%;
   /* top: 2%; */
   z-index: 100;
-  color: rgba(224, 146, 192, 0.8)
+  color: rgba(226, 165, 201, 0.8)
 }
