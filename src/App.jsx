@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css'
+import { useMemo } from "react";
+
 
 import amberPng from "./assets/amber.png";
 import bactivePng from "./assets/bactive.png"
@@ -20,6 +22,8 @@ import saraPng from "./assets/sara.png"
 import sophiaPng from "./assets/sophia.png"
 import susPng from "./assets/sus.png"
 import yeojinPng from "./assets/yeojin.png"
+
+import clickSoundUrl from "./assets/click.wav";
 
 // extrapolate the text, make it a box that you can scroll for text in
 
@@ -120,7 +124,7 @@ function App() {
     "She takes care of me so well, and when she’s not hitting/biting/abusing me, she’s teaching me more about love and making me laugh. " +
     "She’s helped me through terrible, scary things, and has brought me so much joy. " +
     "Even though she pretends to hate me, I strive to be as cool as her one day."
-
+  const clickSound = useMemo(()=>new Audio(clickSoundUrl), []);
 
   const [selectedPhoto, setSelectedPhoto] = useState(null)
   const photos = [
@@ -149,6 +153,11 @@ function App() {
   const [found, setFound] = useState(new Set());
 
   const handlePhotoClick = (photo) => {
+    clickSound.currentTime = 0;
+    clickSound.play().catch(() => {
+
+    });
+
     if(!found.has(photo.title)) {
       setFound(new Set([...found, photo.title]));
       
