@@ -24,7 +24,7 @@ import yeojinPng from "./assets/yeojin.png"
 // extrapolate the text, make it a box that you can scroll for text in
 
 function App() {
-  const amberText = "Amber was my first friend in Vancouver, and it actually feels like fate that we ever met." +
+  const amberText = "Amber was my first friend in Vancouver, and it actually feels like fate that we ever met. " +
     "She really gets me and it’s like we’re in our own world whenever we’re together." +
     " I really feel like she gets me, and that I can tell her anything." +
     " I love her so much even though she always tries to tickle me when we’re together."
@@ -48,7 +48,7 @@ function App() {
   const erinText = "Literally my best friend and my day 1… 15 years going on strong! " +
     "We are actually the ultimate enemies to lovers story, cus she used to bully me in first grade. " +
     "I love this girl so so so much, she’s seen my literal worst days and has been around for some of my best. " +
-    "We’ve actually gone to Hell (constant League of Legends grinding) and back together, and I know that she’s always there for me." +
+    "We’ve actually gone through Hell (constant League of Legends grinding) and back together, and I know that she’s always there for me." +
     "She is so funny and genuine and always puts me back in my place, and I think about her all the time."
   const familyText = "My parents do so much for me, I am so thankful for their love and support. " +
     "A plus side of moving back home was that I can finally spend more time with them. " +
