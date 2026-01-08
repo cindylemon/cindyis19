@@ -1,7 +1,6 @@
 {
   "name": "vite-project",
   "private": true,
-  "homepage": "https://cindylemon.github.io/cindyis19",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
