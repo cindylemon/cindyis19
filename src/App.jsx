@@ -29,8 +29,9 @@ import clickSoundUrl from "./assets/click.wav";
 
 function App() {
   const amberText = "Amber was my first friend in Vancouver, and it actually feels like fate that we ever met." +
-    "She really gets me and it’s like we’re in our own world whenever we’re together." +
-    " I really feel like she gets me, and that I can tell her anything." +
+    "She really gets me and it’s like we’re in our own world whenever we’re together. " +
+    " I really feel like I can tell her anything." +
+    "She's sooo silly and cutesie and awesome and my favourite movie partner. " +
     " I love her so much even though she always tries to tickle me when we’re together."
   const bactiveText = "I honestly don’t even know where to begin." +
     " Badminton completely changed my life." +
