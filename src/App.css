@@ -37,10 +37,10 @@ body{
 .textContainer {
   background: #d5e4d5;
   color: #697559;
-  padding: 25px;
+  width: clamp(100px, 300px, 300px);
+  height: clamp(150px, 200px, 200px);
+  padding: clamp(14px, 12px, 25px);
   border-radius: 12px;
-  width: 300px;
-  height: 200px;
   overflow-y: auto;
   
   scrollbar-width: thin;
@@ -69,4 +69,10 @@ body{
   /* top: 2%; */
   z-index: 100 !important;
   color: rgba(226, 165, 201, 0.8)
+}
+
+@media (max-width: 800px) {
+  .trackingFound {
+    top: 75%;
+  }
 }
