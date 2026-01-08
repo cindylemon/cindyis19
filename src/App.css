@@ -37,7 +37,7 @@ body{
 .textContainer {
   background: #d5e4d5;
   color: #697559;
-  width: clamp(100px, 300px, 300px);
+  width: clamp(150px, 300px, 300px);
   height: clamp(150px, 200px, 200px);
   padding: clamp(14px, 12px, 25px);
   border-radius: 12px;
@@ -74,5 +74,8 @@ body{
 @media (max-width: 800px) {
   .trackingFound {
     top: 75%;
+  }
+  .textContainer {
+    width: 200px;
   }
 }
