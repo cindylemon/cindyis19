@@ -1,7 +1,6 @@
 {
   "name": "vite-project",
   "private": true,
-  "homepage": "https://cindyis19.lol",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
